@@ -1,0 +1,20 @@
+[Unit]
+Description=Local League tournament manager for %i
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/home/%i/tournamentManager
+Environment=TOURNAMENT_DATA_DIR=/home/%i/.local/share/local-league
+Environment=TOURNAMENT_PORT=8080
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/%i/tournamentManager/.venv/bin/python /home/%i/tournamentManager/run.py
+Restart=on-failure
+RestartSec=3
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

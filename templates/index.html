@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151518">
+  <meta name="description" content="Your local MLB The Show tournament: scores, schedules, standings and pitcher history.">
+  <title>Schwaig Red Lions · Tournament Manager</title>
+  <link rel="icon" href="{{ url_for('static', filename='ball.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#dashboard"><img src="{{ url_for('static', filename='ball.svg') }}" alt="" width="38" height="38"><span><span class="brand-light">SCHWAIG</span>RED LIONS</span></a>
+    <div class="sidebar-caption">MLB THE SHOW / TOURNAMENT HQ</div>
+    <nav aria-label="Main navigation">
+      <a href="#dashboard" data-page="dashboard">Overview</a>
+      <a href="#schedule" data-page="schedule">Schedule</a>
+      <a href="#standings" data-page="standings">Standings</a>
+      <a href="#bracket" data-page="bracket">Playoffs</a>
+      <a href="#teams" data-page="teams">Teams & pitchers</a>
+      <a href="#settings" data-page="settings">Tournament setup</a>
+    </nav>
+    <div class="sidebar-bottom"><p>Schwaig Red Lions<br>MLB The Show tournament</p><span class="local-tag">● Runs on your local network</span></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span id="tournament-label">THE CLUBHOUSE</span><span id="connection" role="status">Connecting…</span></header>
+    <main id="main" tabindex="-1"><div class="empty"><h1>Opening the clubhouse…</h1><p>Connecting to the tournament on your local network.</p></div></main>
+    <footer>SCHWAIG RED LIONS <span>Estimated times. Real competition.</span></footer>
+  </div>
+  <div id="toast" role="status" hidden></div>
+  <dialog id="modal"><div id="modal-content"></div></dialog>
+  <noscript>This shared scoreboard needs JavaScript. Enable it and reload the page.</noscript>
+</body>
+</html>
